@@ -21,7 +21,7 @@ ACTUAL_CHECKSUM=$(sha256sum PowerPointViewer.exe | cut -d' ' -f1)
 echo "Installing fonts..."
 cabextract PowerPointViewer.exe -F ppviewer.cab >/dev/null
 mkdir -p "$FONT_DIR"
-cabextract ppviewer.cab -F '*.TTC' -F '*.TTF' -d "$FONT_DIR" >/dev/null
+cabextract ppviewer.cab -F '*.TTC' -F '*.TTF' -d "$FONT_DIR" >/dev/null 2>&1
 
 rm -f PowerPointViewer.exe ppviewer.cab
 
