@@ -19,7 +19,7 @@ ACTUAL_CHECKSUM=$(sha256sum PowerPointViewer.exe | cut -d' ' -f1)
 [ "$ACTUAL_CHECKSUM" = "$EXPECTED_CHECKSUM" ] || { echo "Checksum verification failed!"; rm -f PowerPointViewer.exe; exit 1; }
 
 echo "Installing fonts..."
-cabextract PowerPointViewer.exe -F ppviewer.cab >/dev/null
+cabextract PowerPointViewer.exe -F ppviewer.cab >/dev/null 2>&1
 mkdir -p "$FONT_DIR"
 cabextract ppviewer.cab -F '*.TTC' -F '*.TTF' -d "$FONT_DIR" >/dev/null 2>&1
 
