@@ -9,8 +9,6 @@ DOWNLOAD_URL="https://archive.org/download/PowerPointViewer_201801/PowerPointVie
 EXPECTED_CHECKSUM="249473568eba7a1e4f95498acba594e0f42e6581add4dead70c1dfb908a09423"
 FONT_DIR="$HOME/.local/share/fonts/ppviewer"
 
-echo "Installing PowerPoint Fonts..."
-
 command -v cabextract >/dev/null || { echo "Installing cabextract..."; sudo apt update && sudo apt install -y cabextract; }
 
 echo "Downloading PowerPoint Viewer..."
