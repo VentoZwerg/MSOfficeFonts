@@ -25,8 +25,7 @@ rm -f PowerPointViewer.exe ppviewer.cab
 
 fc-cache -fv >/dev/null 2>&1
 
-echo "Fonts installed to: $FONT_DIR"
-echo "Here they are:"
+echo "Fonts installed to $FONT_DIR. Here they are:"
 ls -alh "$FONT_DIR"
 echo
 echo "Restart applications to use new fonts."
