@@ -11,8 +11,8 @@ FONT_DIR="$HOME/.local/share/fonts/ppviewer"
 
 command -v cabextract >/dev/null || { echo "Installing cabextract..."; sudo apt update && sudo apt install -y cabextract; }
 
-echo "Downloading PowerPoint Viewer..."
-wget -q "$DOWNLOAD_URL"
+echo "Downloading PowerPointViewer.exe..."
+wget -q "$DOWNLOAD_URL" || { echo "Download from $DOWNLOAD_URL failed! Please try again..."; exit 1; }
 ACTUAL_CHECKSUM=$(sha256sum PowerPointViewer.exe | cut -d' ' -f1)
 [ "$ACTUAL_CHECKSUM" = "$EXPECTED_CHECKSUM" ] || { echo "Checksum verification failed!"; rm -f PowerPointViewer.exe; exit 1; }
 
